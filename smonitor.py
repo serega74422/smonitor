@@ -5,7 +5,10 @@
 from __future__ import print_function
 import sys
 import daemon
+try:
 from daemon.pidlockfile import PIDLockFile
+except ImportError:
+from lockfile.pidlockfile import PIDLockFile
 import tempfile
 import time
 import re
